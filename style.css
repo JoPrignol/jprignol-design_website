@@ -1,0 +1,616 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+p{
+    line-height: 1.5;
+}
+
+/* SECTIONS REALISATION ET CONTACT */ 
+
+a{
+    text-decoration: none;
+    color:#000;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+}
+
+.container a{
+        flex-grow: 1;
+    width: 50%; /*largeur = 50% de la page */
+    height: 100vh; /* La hauteur prend 100% de la fenetre visible */
+    background-color: #ffffff; /* Couleur de fond */
+    display: flex;
+    align-items: center; /* Paragraphe aligné au centre */
+    justify-content: center; 
+    border-right: 3px #000000 solid;
+    transition: width 0.6s; /* Ajout d'une transition pour une animation fluide */
+}
+
+.realisations {
+    flex-grow: 1;
+    width: 50%; /*largeur = 50% de la page */
+    height: 100vh; /* La hauteur prend 100% de la fenetre visible */
+    background-color: #ffffff; /* Couleur de fond */
+    display: flex;
+    align-items: center; /* Paragraphe aligné au centre */
+    justify-content: center; 
+    border-right: 1.5px #000000 solid;
+    transition: width 0.6s; /* Ajout d'une transition pour une animation fluide */
+}
+
+.contact {
+    flex-grow: 1;
+    width: 50%;
+    height: 100vh;
+    background-color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1.5px #000000 solid;
+    transition: width 0.6s; 
+}
+
+.container p{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3em;
+    transition: font-size 0.6s ease;
+}
+
+
+/* ANIMATIONS SURVOL */
+
+.realisations:hover {
+    width: 52%; /* Augmenter la largeur de 2% lorsqu'on survole */
+}
+
+.realisations:hover ~ .contact {
+    width: 48%; /* Diminuer la largeur de l'autre div de 2% lorsqu'on survole */
+}
+
+.contact:hover {
+    width: 52%; 
+}
+
+.contact:hover ~ .realisations {
+    width: 48%; 
+}
+
+.realisations:hover p {
+    font-size: 3.12em; /* Nouvelle taille du texte au survol */
+}
+
+.contact:hover p {
+    font-size: 3.12em; /* Nouvelle taille du texte au survol */
+}
+
+/* LOGO CENTRAL */
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 998; /* Assurez-vous que l'image est au-dessus des autres éléments */
+    width: 13%;
+    height: 35%;
+    border: 6px #000000 solid;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+
+/* BANIERES */
+
+.banner-top {
+    top: 0; /* colle la div en haut de page */
+    border-bottom: #000000 6px solid;
+    text-align: left; /* Alignement du texte à gauche */
+    overflow: hidden; /* Cache le texte qui dépasse de la div */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+.banner-bottom {
+    bottom: 0; 
+    border-top: #000000 6px solid;
+}
+
+.banner-top, .banner-bottom{
+    height: 5.3%;
+    background-color: #ffffff; 
+    color: #000; 
+    line-height: 2; /* Ajustement de la hauteur du texte au centre */
+    position: fixed; /* Fixe les divs en haut et en bas de la fenêtre */
+    width: 100%;
+    z-index: 999; 
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.banner-top p{
+    text-align: right;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+.banner-bottom p{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+
+
+/* ANIMATIONS */
+
+.repeat-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    animation: repeatAnimation 50s linear infinite;
+}
+
+.repeat-content {
+    display: flex;
+    align-items: center;
+}
+
+.repeat-content p {
+    margin-right: 5px; 
+    margin-left: 5px; /*marges pour séparer texte et logo */
+  }
+
+  .repeat-content img {
+    height: 1.5em; /* La taille de l'image est définie en fonction de la taille du texte */
+      width: auto; /* Permet à la largeur de s'ajuster automatiquement pour maintenir les proportions */
+    }
+
+@keyframes repeatAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+.repeat-section2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    animation: repeatAnimation2 50s linear infinite;
+}
+
+.repeat-content2 {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes repeatAnimation2 {
+    0% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-200%)
+    }
+}
+
+
+/* BODY DE LA PAGE CONTACT */
+
+.info-contact{
+    width:100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.info-contact-text{
+    grid-column: 2/4;
+    grid-row: 2;
+    text-align: center;
+}
+
+.info-contact-text h2{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2em;
+}
+
+.info-contact-text p{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+    align-self: center;
+    justify-self: center;
+}
+
+.info-contact-insta{
+    border-left: #000000 6px solid;
+    border-right: #131313 6px solid;
+    text-align: center;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 3;
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+    transition: width 0.6s ease;
+}
+
+
+.info-contact-insta p{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4em;
+    transition: font-size 0.6s ease;
+}
+
+
+.info-contact-insta:hover{
+    width:65%;
+}
+
+.info-contact-insta:hover p{
+    font-size: 1.5em;
+}
+
+
+.info-contact-mail{
+    border-left: #000000 6px solid;
+    border-right: #000000 6px solid;
+    text-align: center;
+    align-items: center;
+    grid-column: 3;
+    grid-row: 3;
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+    transition: width 0.6s ease;
+}
+
+.info-contact-mail p{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4em;
+    transition: font-size 0.6s ease;
+}
+
+.info-contact-mail:hover{
+    width:65%;
+}
+
+.info-contact-mail:hover p{
+    font-size: 1.5em;
+}
+
+
+/* LISTE DES RÉALISATIONS */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1;
+    gap: 30px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.project-l {
+    background-color: #fff;
+    padding: 20px;
+    text-align: justify;
+    align-items: center;
+    align-self: left;
+    align-content: left;
+    justify-content: left;
+    display:flex;
+
+}
+
+.project-r {
+    background-color: #fff;
+    padding: 20px;
+    text-align: justify;
+    align-items: center;
+    align-self: right;
+    align-content: right;
+    justify-content: right;
+    display:flex;
+
+}
+
+.project-l img {
+    max-width: 42%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    border-left: 6px #000000 solid;
+}
+
+.project-l p {
+    margin: 50px;
+    max-width: 55%;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3em;
+    border-top: 6px #000000 solid;
+    border-bottom: 6px #000000 solid;
+    padding: 30px;
+
+}
+
+.project-r img {
+    max-width: 42%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding-right: 30px;
+    border-right: 6px #000000 solid;
+}
+
+.project-r p {
+    margin: 50px;
+    max-width: 55%;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3em;
+    border-top: 6px #000000 solid;
+    border-bottom: 6px #000000 solid;
+    padding: 30px;
+}
+
+.project-c {
+    background-color: #fff;
+    padding: 20px;
+    text-align: justify;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    display:flex;
+}
+
+.cta-etsy {
+    background-color: #000;
+    width:32%;
+    align-items: center;
+    align-self: center;
+    margin-left: 34%;
+    margin-right: 34%;
+    margin-bottom: 5%;
+    transition: scale 0.6s ease;
+    animation: beat 4s linear infinite;
+    padding:1%;
+    border-radius: 4px;
+}
+
+.cta-etsy h2{
+    color:#fff;
+    text-align: center;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.55em;
+    transition: font-size 0.6s ease;
+    line-height: 1.5;
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(100%)
+    }
+    20%{
+        transform: scale(101%);
+    }
+    25%{
+        transform: scale(99%);
+    }
+    55%{
+        transform: scale(101%);
+    }
+    60%{
+        transform: scale(100%);
+    }
+    65%{
+        transform: scale(101%);
+    }
+    70%{
+        transform: scale(99%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+.cta-etsy:hover{
+    scale: 105%;
+}
+
+
+/* RESPONSIVE */ 
+
+@media only screen and (max-width: 1000px){
+
+
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 998; /* Assurez-vous que l'image est au-dessus des autres éléments */
+        width: 16%;
+        height: 20%;
+        border: 6px #000000 solid;
+        background-color: #ffffff;
+        border-radius: 15px;
+    }
+
+
+    .realisations p {
+        transform: rotate(-90deg); /* Applique une rotation de 90 degrés */
+        transform-origin: center; /* Modifie l'origine de la transformation pour ajuster le point de rotation */
+        justify-content: center;
+        align-self:center;
+        text-transform: uppercase;
+    }
+    
+    .contact p {
+        transform: rotate(90deg); /* Applique une rotation de 90 degrés */
+        transform-origin: center; /* Modifie l'origine de la transformation pour ajuster le point de rotation */
+        justify-content: center;
+        align-self:center;
+        text-transform: uppercase;
+        display: flex;
+    }
+
+    .info-contact-text h2{
+        font-size: 1.5em;
+    }
+    
+    .info-contact-text p{
+        font-size: 0.8em;
+        text-align: justify;
+    }
+
+    .info-contact-insta{
+        width: 60%;
+    }
+    
+    
+    .info-contact-insta p{
+        font-size: 0.67em;
+    }
+
+    .info-contact-mail{
+        width: 60%;
+    }
+    
+    
+    .info-contact-mail p{
+        font-size: 0.67em;
+    }
+
+    .info-contact-mail:hover{
+        width:65%;
+    }
+    
+    .info-contact-mail:hover p{
+        font-size: 0.73em;
+    }
+
+    .info-contact-insta:hover{
+        width:65%;
+    }
+    
+    .info-contact-insta:hover p{
+        font-size: 0.73em;
+    }
+
+    .project-l {
+        flex-direction: column;
+        padding: 5px;
+    }
+    
+    .project-r {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .project-l img {
+        max-width: 90%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        padding-left: 30px;
+        border-left: 6px #000000 solid;
+    }
+    
+    .project-l p {
+        margin: 5px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding:5px;
+    }
+    
+    .project-r img {
+        max-width: 90%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        padding-right: 30px;
+        border-right: 6px #000000 solid;
+    }
+    
+    .project-r p {
+        margin: 5px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding:5px;
+    }
+    
+    .project-c {
+        background-color: #fff;
+        padding: 20px;
+        text-align: justify;
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        justify-content: center;
+        display:flex;
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: 1;
+        gap: 30px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .cta-etsy {
+        width:80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .cta-etsy h2{
+        color:#fff;
+        font-size: 1.4em;
+        line-height: 1.5;
+    }
+
+}
